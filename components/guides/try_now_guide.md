@@ -52,7 +52,7 @@ Create an account on [OpenAI](https://platform.openai.com/signup) or log in if y
 3. Copy the `Secret Key` - should look like `sk-proj-<ID_WITH_48_CHARACTERS>`. (Note: you won't be able to see it again). Add `Secret Key` against `OPENAI_API_KEY` in the inputs section.
 
 #### 2.2 Finetuning the GPT model
-1. Download `Fine-Tuning Data` using below button `Download Fine-Tuning Data` or [repository](https://huggingface.co/spaces/disciple0/notion-gpt/tree/main/data).
+1. Download `Fine-Tuning Data` using below button `Download Fine-Tuning Data` or [repository](https://huggingface.co/spaces/disciple0/notiongpt/tree/main/data).
 2. Visit the [OpenAI Fine-tuning page](https://platform.openai.com/finetune) and click `+ Create` in the top right corner.
 3. Fill in the form with the following information, and leave the rest as default:
 - `Base Model`: `gpt-3.5-turbo-0125` (or any other model you prefer)
