@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://disciple0:$HF_TOKEN@huggingface.co/spaces/disciple0/notiongpt-main main:main
+        run: git push https://HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/${{ secrets.HF_SPACE_MAIN }} main:main
