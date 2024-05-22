@@ -1,8 +1,6 @@
 # Quickstart Guide to Build Your Own NotionGPT
-
-#### `Remember to save all your keys in a secure place on your local machines or cloud service apps. You would need them for future use.`
-
-## Step 1: Notion Setup
+---
+## <u>Step 1: Notion Setup</u>
 Create an account on [Notion](https://notion.so) or log in if you already have one.
 
 ### 1.1 Generate private API keys to your Notion data
@@ -29,7 +27,7 @@ Create an account on [Notion](https://notion.so) or log in if you already have o
 6. Click `Create application`.
 7. Scroll down to keys and copy the `Access Key`.
 
-## Step 2: OpenAI Setup
+## <u>Step 2: OpenAI Setup</u>
 Create an account on [OpenAI](https://platform.openai.com/signup) or log in if you already have one.
 
 ### 2.1 Get your API key
@@ -38,7 +36,7 @@ Create an account on [OpenAI](https://platform.openai.com/signup) or log in if y
 3. Copy the `Secret Key` - should look like `sk-proj-<ID_WITH_48_CHARACTERS>`. (Note: you won't be able to see it again)
 
 ### 2.2 Finetuning the GPT model
-1. Download `data/finetuning_data_cot_v7.jsonl` from the [repository](https://huggingface.co/spaces/disciple0/notiongpt-main/tree/main/data).
+1. Download `Fine-Tuning Data` using below button `Download Fine-Tuning Data` or [repository](https://huggingface.co/spaces/disciple0/notion-gpt/tree/main/data).
 2. Visit the [OpenAI Fine-tuning page](https://platform.openai.com/finetune) and click `+ Create` in the top right corner.
 3. Fill in the form with the following information, and leave the rest as default:
 - `Base Model`: `gpt-3.5-turbo-0125` (or any other model you prefer)
@@ -48,10 +46,10 @@ Note: If failed, try visiting the [Billings page](https://platform.openai.com/se
 4. Click `Create` and wait for the model to finish training.
 5. Once the model is trained, copy the model name. (It should look something like `ft:gpt-3.5-turbo-0125:personal:notiongpt:<ID>`)
 
-## Step 3: Setting up the app - Hugging Face Spaces
+## <u>Step 3: Setting up the app - Hugging Face Spaces</u>
 Create an account on [Hugging Face](https://huggingface.co/join) or log in if you already have one.
 
-1. Visit the NotionGPT space [here](https://huggingface.co/spaces/disciple0/notiongpt-main).
+1. Visit the NotionGPT space [here](https://huggingface.co/spaces/disciple0/notion-gpt).
 2. Click on the `...` more menu in the top-right corner of the space.
 3. Select `Duplicate this space`.
 4. Keep everything the same, but set your `Space secrets` according to the information below:
@@ -61,7 +59,8 @@ Create an account on [Hugging Face](https://huggingface.co/join) or log in if yo
 - `OPENAI_API_KEY`: Your OpenAI API key (refer to Step 2).
 - `MODEL_NAME`: The name of the fine-tuned model (refer to Step 2).
 5. Click `Duplicate Space`, and wait for the application to build. (Note that this may take a few minutes)
+---
+## `Remember to save all your keys in a secure place on your local machines or cloud service apps. You would need them for future use.`
 
 ## Enjoy your `Own` NotionGPT! 🎉
-
-Built with inspiration from [github repository](https://github.com/s6bhatti/notion-gpt) by [s6bhatti](https://github.com/s6bhatti)
+---

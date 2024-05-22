@@ -1,16 +1,20 @@
-## Get Quickly Started
+&nbsp;
+## <u>Get Quickly Started</u>
+
+[![Demo Video (WIP)](https://example.com/video.mp4)](https://example.com/video.mp4)
 
 ### <span style="color:blue">Input</span>
 - Enter a clear & concise description for a Notion page you are looking for (not more than 50-100 words) & move that goal from `Open` to `Work-in-progress`.
-- Don't forget to add value to the required keys before hitting the `Run` button. Refer to the below steps on how to get the values.
-- How to use Temperature & Top P? [Link 1](https://medium.com/@1511425435311/understanding-openais-temperature-and-top-p-parameters-in-language-models-d2066504684f) & [Link 2](https://community.openai.com/t/cheat-sheet-mastering-temperature-and-top-p-in-chatgpt-api/172683)
-#### `Note: We don't store any user information. If you are hesitant to add your keys here, we recommend you to visit the tab 'Guide to Build Your Own NotionGPT'. And, remember to save all your key values in a secure place on your local machines or cloud service apps. You would need them for future use.`
+- Don't forget to temporarily add values to the required input keys before hitting the `Run` button. Refer to the below steps on figure out how to get the values.
+- [Optional Inputs] How to use Temperature & Top P? [Link 1](https://medium.com/@1511425435311/understanding-openais-temperature-and-top-p-parameters-in-language-models-d2066504684f) & [Link 2](https://community.openai.com/t/cheat-sheet-mastering-temperature-and-top-p-in-chatgpt-api/172683)
 
 ### <span style="color:blue">Output</span>
 - Sample Notion Page: [2-Week Vacation Across India](https://www.notion.so/8d447c76a4cf4460aad2f013cd6e57ba)
 
-## Two steps to see the magic (with Notion X OpenAI)!
-#### Temporarily update keys (environment variables) for this NotionGPT. To get your own NotionGPT, refer to tab `Guide to Build Your Own NotionGPT`.
+#### `Note: This application doesn't store any user information. If you are hesitant to add your keys here, reach out to the creator to build your own NotionGPT (refer to Contact Us). And, remember to save all your key values in a secure place on your local machines or cloud service apps. You would need them for future use.`
+&nbsp;
+
+## <u>Two steps to see the magic (with Notion X OpenAI)</u>!
 
 ### Step 1: Notion Setup
 Create an account on [Notion](https://notion.so) or log in if you already have one.
@@ -48,7 +52,7 @@ Create an account on [OpenAI](https://platform.openai.com/signup) or log in if y
 3. Copy the `Secret Key` - should look like `sk-proj-<ID_WITH_48_CHARACTERS>`. (Note: you won't be able to see it again). Add `Secret Key` against `OPENAI_API_KEY` in the inputs section.
 
 #### 2.2 Finetuning the GPT model
-1. Download `data/finetuning_data_cot_v7.jsonl` from the [repository](https://huggingface.co/spaces/disciple0/notiongpt-main/tree/main/data).
+1. Download `Fine-Tuning Data` using below button `Download Fine-Tuning Data` or [repository](https://huggingface.co/spaces/disciple0/notion-gpt/tree/main/data).
 2. Visit the [OpenAI Fine-tuning page](https://platform.openai.com/finetune) and click `+ Create` in the top right corner.
 3. Fill in the form with the following information, and leave the rest as default:
 - `Base Model`: `gpt-3.5-turbo-0125` (or any other model you prefer)
@@ -57,7 +61,6 @@ Create an account on [OpenAI](https://platform.openai.com/signup) or log in if y
 Note: If failed, try visiting the [Billings page](https://platform.openai.com/settings/organization/billing/overview) to add a payment method for your OpenAI account. Then, click `Add to credit balance` to add some funds to your account, I recommend $10 to start.
 4. Click `Create` and wait for the model to finish training.
 5. Once the model is trained, copy the model name. (It should look something like `ft:gpt-3.5-turbo-0125:personal:notiongpt:<ID>`). Add `model name` against `MODEL_NAME` in the inputs section.
-
-### Once all the keys are added, click on the above `Run` button & enojoy your first step towards that goal! 🎉
-
-Built with inspiration from [github repository](https://github.com/s6bhatti/notion-gpt) by [s6bhatti](https://github.com/s6bhatti)
+---
+## Once all the keys are added, click on the above `Run` button & enojoy your first step towards that goal! 🎉
+---

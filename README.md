@@ -1,11 +1,9 @@
 ---
 title: NotionGPT
-emoji: 🚀
-colorFrom: gray
-colorTo: blue
-sdk: gradio
-sdk_version: 4.31.0
-app_file: gradio_app.py
+emoji: 👀
+colorFrom: blue
+colorTo: green
+sdk: docker
 pinned: false
 ---
 
@@ -49,7 +47,7 @@ Create an account on [OpenAI](https://platform.openai.com/signup) or log in if y
 3. Copy the `Secret Key` - should look like `sk-proj-<ID_WITH_48_CHARACTERS>`. (Note: you won't be able to see it again)
 
 ### 2.2 Finetuning the GPT model
-1. Download `data/finetuning_data_cot_v7.jsonl` from the [repository](https://huggingface.co/spaces/disciple0/notiongpt-main/tree/main/data).
+1. Download `data/finetuning_data_cot_v7.jsonl` from the [repository](https://huggingface.co/spaces/disciple0/notion-gpt/tree/main/data).
 2. Visit the [OpenAI Fine-tuning page](https://platform.openai.com/finetune) and click `+ Create` in the top right corner.
 3. Fill in the form with the following information, and leave the rest as default:
 - `Base Model`: `gpt-3.5-turbo-0125` (or any other model you prefer)
@@ -62,7 +60,7 @@ Note: If failed, try visiting the [Billings page](https://platform.openai.com/se
 ## Step 3: Setting up the app - Hugging Face Spaces
 Create an account on [Hugging Face](https://huggingface.co/join) or log in if you already have one.
 
-1. Visit the NotionGPT space [here](https://huggingface.co/spaces/disciple0/notiongpt-main).
+1. Visit the NotionGPT space [here](https://huggingface.co/spaces/disciple0/notion-gpt).
 2. Click on the `...` more menu in the top-right corner of the space.
 3. Select `Duplicate this space`.
 4. Keep everything the same, but set your `Space secrets` according to the information below:
