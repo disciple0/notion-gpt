@@ -3,18 +3,26 @@ import os
 import requests
 from notion_client import Client
 
-NOTION_KEY = os.environ["NOTION_KEY"]
-UNSPLASH_ACCESS_KEY = os.environ["UNSPLASH_ACCESS_KEY"]
 
+'''LOAD ENVIRONMENT VARIABLES'''
+from dotenv import load_dotenv
+load_dotenv()
+NOTION_KEY = os.getenv('NOTION_KEY')
+UNSPLASH_ACCESS_KEY = os.getenv('UNSPLASH_ACCESS_KEY')
+
+
+'''LOAD API CLIENTS'''
 notion = Client(auth=NOTION_KEY)
 
 
-def get_unsplash_image_url(query):
+def get_unsplash_image_url(query, def_env_var=True):
     params = {
         "query": query,
         "client_id": UNSPLASH_ACCESS_KEY,
         "orientation": "landscape"
     }
+    if not def_env_var:
+        params["client_id"] = os.getenv('UNSPLASH_ACCESS_KEY')
     response = requests.get("https://api.unsplash.com/search/photos", params=params)
 
     if response.status_code == 200:
@@ -46,8 +54,8 @@ def process_rich_text_content(text_blocks):
     return rich_text_content
 
 
-def create_page(parent_id, title, icon, cover_image=True):
-    image_url = get_unsplash_image_url(title) if cover_image else None
+def create_page(parent_id, title, icon, cover_image=True, def_env_var=True):
+    image_url = get_unsplash_image_url(title, def_env_var=def_env_var) if cover_image else None
 
     page_payload = {
         "parent": {
@@ -77,12 +85,15 @@ def create_page(parent_id, title, icon, cover_image=True):
             }
         }
 
-    new_page = notion.pages.create(**page_payload)
+    _notion = notion
+    if not def_env_var:
+        _notion = Client(auth=os.getenv('NOTION_KEY'))
+    new_page = _notion.pages.create(**page_payload)
     return new_page
 
 
-def create_database(parent_id, title, icon, schema, is_inline=False, cover_image=True):
-    image_url = get_unsplash_image_url(title) if cover_image else None
+def create_database(parent_id, title, icon, schema, is_inline=False, cover_image=True, def_env_var=True):
+    image_url = get_unsplash_image_url(title, def_env_var=def_env_var) if cover_image else None
     approved_types = ("checkbox", "created_by", "created_time", "date", "email", "files", "last_edited_by",
                       "last_edited_time", "multi_select", "number", "people", "phone_number", "rich_text", "select",
                       "title", "url")
@@ -127,7 +138,10 @@ def create_database(parent_id, title, icon, schema, is_inline=False, cover_image
             }
         }
 
-    new_database = notion.databases.create(**database_payload)
+    _notion = notion
+    if not def_env_var:
+        _notion = Client(auth=os.getenv('NOTION_KEY'))
+    new_database = _notion.databases.create(**database_payload)
     return new_database
 
 

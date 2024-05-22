@@ -1,14 +1,3 @@
----
-title: NotionGPT
-emoji: 🚀
-colorFrom: gray
-colorTo: blue
-sdk: gradio
-sdk_version: 4.31.0
-app_file: gradio_app.py
-pinned: false
----
-
 # Quickstart Guide to Build Your Own NotionGPT
 
 #### `Remember to save all your keys in a secure place on your local machines or cloud service apps. You would need them for future use.`

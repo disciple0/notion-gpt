@@ -5,12 +5,16 @@ from functools import partial
 from blueprints.architect import process_blueprint, generate_blueprint
 
 
+'''LOAD ENVIRONMENT VARIABLES'''
+from dotenv import load_dotenv
+load_dotenv()
+NOTION_PAGE_ID = os.getenv('NOTION_PAGE_ID')
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generates Notion content given a brief description")
     parser.add_argument("description", help="Text description of the desired content in Notion.")
     args = parser.parse_args()
-
-    notion_page_id = os.environ["NOTION_PAGE_ID"]
 
     content = None
     for update in generate_blueprint(args.description):
@@ -20,7 +24,7 @@ def main():
             print(update, end="", flush=True)
 
     blueprint = content["blueprint"]
-    process_blueprint(notion_page_id, blueprint)
+    process_blueprint(NOTION_PAGE_ID, blueprint)
 
 
 if __name__ == "__main__":

@@ -1,3 +1,6 @@
 .idea
-blueprints/__pycache__
+__pycache__
+components/blueprints/__pycache__
+.env
 .DS_Store
+flagged

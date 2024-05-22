@@ -2,7 +2,14 @@ import os
 
 from notion_client import Client
 
-NOTION_KEY = os.environ["NOTION_KEY"]
+
+'''LOAD ENVIRONMENT VARIABLES'''
+from dotenv import load_dotenv
+load_dotenv()
+NOTION_KEY = os.getenv('NOTION_KEY')
+
+
+'''LOAD API CLIENTS'''
 notion = Client(auth=NOTION_KEY)
 
 
